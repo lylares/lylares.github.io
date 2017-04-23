@@ -1,0 +1,817 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="axure,网易云音乐,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="lylares's blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="最近做了一个网易云音乐移动端的demo，由于强迫症所以做成了高保真的效果。我将分享一下播放界面的制作过程，因为播放界面对于播放时间、歌词同步、播放状态等都涉及到用函数实现，稍微复杂些。">
+<meta name="keywords" content="axure,网易云音乐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Axure实现音乐播放效果">
+<meta property="og:url" content="https://www.lylares.com/axure-music.html">
+<meta property="og:site_name" content="lylares's blog">
+<meta property="og:description" content="最近做了一个网易云音乐移动端的demo，由于强迫症所以做成了高保真的效果。我将分享一下播放界面的制作过程，因为播放界面对于播放时间、歌词同步、播放状态等都涉及到用函数实现，稍微复杂些。">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142911812-168x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142936308-169x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142954497-170x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143016860-169x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/2017040214303181-169x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143043304-170x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143453438-168x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144248884-300x198.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144857339-171x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144923810-185x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145726752-300x274.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145736669-175x300.png">
+<meta property="og:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145503743-300x146.png">
+<meta property="og:updated_time" content="2017-04-19T08:07:12.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Axure实现音乐播放效果">
+<meta name="twitter:description" content="最近做了一个网易云音乐移动端的demo，由于强迫症所以做成了高保真的效果。我将分享一下播放界面的制作过程，因为播放界面对于播放时间、歌词同步、播放状态等都涉及到用函数实现，稍微复杂些。">
+<meta name="twitter:image" content="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142911812-168x300.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.lylares.com/axure-music.html">
+
+
+
+
+
+  <title> Axure实现音乐播放效果 | lylares's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lylares's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Enthusiastic about life, design and innovation.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://www.lylares.com/axure-music.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lylares">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lylares's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Axure实现音乐播放效果
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-13T18:13:47+08:00">
+                2017年03月13日
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日记/" itemprop="url" rel="index">
+                    <span itemprop="name">日记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/axure-music.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近做了一个网易云音乐移动端的demo，由于强迫症所以做成了高保真的效果。我将分享一下播放界面的制作过程，因为播放界面对于播放时间、歌词同步、播放状态等都涉及到用函数实现，稍微复杂些。<br><a id="more"></a><br><strong>整体效果预览：</strong><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142911812.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142911812-168x300.png" alt="网易云音乐原型1"></a> <a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142936308.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142936308-169x300.png" alt="网易云音乐原型2"></a> <a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142954497.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142954497-170x300.png" alt="网易云音乐原型3"></a><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143016860.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143016860-169x300.png" alt="网易云音乐原型4"></a><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/2017040214303181.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/2017040214303181-169x300.png" alt="网易云音乐5"></a> <a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143043304.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143043304-170x300.png" alt="网易云音乐6"></a></p>
+<p><strong>1.分析结构</strong></p>
+<p>首先分析整个界面构成，点击底部导航菜单时候，上部分内容依次改变，音乐播放界面的入口始终在顶层。所以我们大致可以把整个界面分为两大部分：上部内容部分以及底部导航栏。</p>
+<p>结构已经清晰，那么内容部分就可以用内联框架去加载，点击每个导航菜单下的内容依次加载发现音乐、我的音乐、朋友、账号 页面内容。左图空白部分是整个界面的核心部分：内联框架，下部分是导航菜单。</p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143453438-168x300.png" alt=""></p>
+<p><strong>2.实现同步系统时间</strong></p>
+<p>在右上角会有一个两个状态的动态面板，在页面加载的时候会以1s的时间去切换状态。这个面板是为了实现时间同步系统时间，实现步骤很简单：在动态面板状态改变的时候-设置时间显示在一个文本框上面即可。<br>小时部分：</p>
+<p><pre>[[0.concat(Now.getHour()).substr((0.concat(Now.getHour()))).length-2,2)]]</pre><br>分钟部分:</p>
+<p><pre>[[(0.concat(Now.getMinutes()).substr((0.conncat(Now.getMinutes())).length-2,2)]]</pre><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144248884.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144248884-300x198.png" alt="获取系统时间"></a></p>
+<p>这里用到了几个函数：.concat() 用于字符串的连接、Now.getHour()用于获取系统小时数、 Now.getMinute()获取系统分钟数、.substr(x,y)从参数x开始截取y个字符串、.length 获取字符串长度 。我们想要的格式是这样：00:00</p>
+<p>首先分析小时数：Now.getHour()获得的小时可能是一位数的我们可以在前面填充0来补足位数于是就用0.concat(Now.getHour())<br>但是这个函数连接了0和小时数，当小时数超过1位数的时候获得的值可能是这样010，这显然不符合我们的要求，我们需要得到后面的两位数10，于是substr()函数有用了:substr((0.concat(Now.getHour()))).length-2,2)<br>substr()从0.concat(Now.getHour() 的length-2位置，也就是倒数第二位开始截取并截取2位数，于是010变成10。分钟数的实现方法同理不再赘述。到这里同步系统时间完成。<br><!--nextpage--><br><strong>3.音乐播放界面实现</strong><br><span style="color: #3366ff">首先要实现这样的效果：</span><br>点击播放按钮音乐开始播放，同时中部的指针接触到唱片，唱片同步旋转，底部播放时间秒级增加，剩余秒级时间减少，时间线变成红色同步向右移动。点击中间部分切换到歌词页面，歌词同步向上移动。再次点击播放按钮时所有动作停止。指针远离唱片。<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144857339.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144857339-171x300.png" alt="播放主界面"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144923810.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144923810-185x300.png" alt="歌词"></a><br>元件准备：<br>播放按钮为动态面板play，状态为未播放时的play已经播放时的plus<br>播放时间为文本框star,剩余播放时间为end文本框<br>中间的状态线为动态面板slide小圆点，动态面板slide_frontcol包含一条红色线条slide_colorline位置（-206,0），初始状态线slide_line未于slide_frontcol下一层<br>中部顶层为一个热区，实现点击切换歌词界面<br>中部底层为一个动态面板poc_fm包含默认状态fm和歌词界面gc（fm状态里有唱片pic_pod以及指针xz_line；gc状态里一个动态面板里包含歌词lyric矩形、两个阴影矩形  实现当前歌词突出显示）<br>一个位于底部的内联框架用于音乐文件的加载<br><span style="color: #3366ff">右上角有一个隐藏的具有两个状态的动态面板’时间控制’，也是播放时间控制得以实现的核心元件</span></p>
+<p>分析：<br>以上所有的动作都由播放按钮触发，播放按钮有播放和暂停两种状态，所以播放按钮可以用一个动态面板以两个状态分别表示播放和暂停。</p>
+<p>音乐的加载用内联框架实现。</p>
+<p>音乐时间用两个变量playtime和playtime2表示，变量的初始值为00:00和总时长03:30，用一个以1s切换一次的动态面板去控制播放时间刚好以1s步进，两个变量分别递增和递减。音乐播放的时候切换这个动态面板，那么时间就随之改变了。</p>
+<p>单击点击播放按钮时候，切换播放按钮状态，判断播放按钮所处的状态，如果在播放就把指针旋转到原来位置。停止音乐播放，切换播放按钮状态为停止。如果没有播放则播放音乐，设置时间控制动态面板状态开始循环变化，旋转指针和唱片。</p>
+<p>时间控制面板状态改变的时候设置两个变量值并水平移动底部的时间线，同步垂直移动歌词面板。</p>
+<p>播放按钮的点击事件以及状态改变事件 以及“时间控制”动态面板的状态改变事件：</p>
+<p><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145726752.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145726752-300x274.png" alt="播放按钮事件"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145736669.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145736669-175x300.png" alt="时间控制动态面板"></a></p>
+<p>播放时间值：</p>
+<p><pre>[[‘0’.concat(math.floor(playtime/60)).slice(-2)]]:[[‘0’.concat(playtime%60).slice(-2)]]</pre><br>math.floor()：返回小数向下最接近的整数<br>剩余时间值：</p>
+<p><pre>[[‘0’.concat(math.floor(playtime2/60)).slice(-2)]]:[[‘0’.concat(playtime2%60).slice(-2)]]</pre><br>时间线水平移动值：</p>
+<p><pre>[[playtime/210*200+b.x]]</pre><br>时间控制里的其他项是控制歌词的移动，实现歌词和歌曲的同步。</p>
+<p>slide线条移动：<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145503743.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145503743-300x146.png" alt="状态线移动设置"></a><br>原型rp文件：<a href="http://www.lylares.cn/wp-content/uploads/2017/04/20170402004941822.rar" target="_blank" rel="external">http://www.lylares.cn/wp-content/uploads/2017/04/20170402004941822.rar</a><br>在线演示效果:<span style="color: #3366ff"><a target="blank" href="https://www.lylares.cn/wy/index.html">点击查看</a></span><br>解压密码:pk215</p>
+<p><span style="font-size: 10pt">建议PC端使用Chrome浏览器浏览，以获得最佳体验。</span></p>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+    <div>坚持原创分享，随意就好！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.jpg" alt="lylares WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="lylares Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      lylares
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.lylares.com/axure-music.html" title="Axure实现音乐播放效果">https://www.lylares.com/axure-music.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/axure/" rel="tag"># axure</a>
+          
+            <a href="/tags/网易云音乐/" rel="tag"># 网易云音乐</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/something-interesting.html" rel="next" title="那些有意思的网站">
+                <i class="fa fa-chevron-left"></i> 那些有意思的网站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/vba.html" rel="prev" title="VBA实现模糊查询">
+                VBA实现模糊查询 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="lylares">
+          <p class="site-author-name" itemprop="name">lylares</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lylares" target="_blank" rel="external nofollow" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.lylares.cn/" title="啊林的小窝" target="_blank">啊林的小窝</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href="http://www.lylares.com">lylares</a>.all rights reserved.</span>
+</div>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> 
+</div>
+<script language="javascript">
+var now = new Date();
+function createtime(){
+var grt= new Date("4/16/2017 1:33:00");//此处修改你的建站时间或者网站上线时间
+now.setTime(now.getTime()+250);
+days = (now - grt ) / 1000 / 60 / 60 / 24;
+dnum = Math.floor(days);
+hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+hnum = Math.floor(hours);
+if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+mnum = Math.floor(minutes);
+if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+snum = Math.round(seconds);
+if(String(snum).length ==1 ){snum = "0" + snum;}
+document.getElementById("timeDate").innerHTML = "已运行"+dnum+"天";
+document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+}
+setInterval("createtime()",250);
+</script>
+
+   
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a064eff8fa3145e1b95f0d339b4dc772",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

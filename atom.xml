@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lylares&#39;s blog</title>
+  <subtitle>Enthusiastic about life, design and innovation.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.lylares.com/"/>
+  <updated>2017-04-20T04:25:11.165Z</updated>
+  <id>https://www.lylares.com/</id>
+  
+  <author>
+    <name>lylares</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>精简美化CSS的JS源代码</title>
+    <link href="https://www.lylares.com//purity-css.html"/>
+    <id>https://www.lylares.com//purity-css.html</id>
+    <published>2017-04-20T03:23:22.000Z</published>
+    <updated>2017-04-20T04:25:11.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>在优化网站的时候对小白来说就是能找到各种现成的工具。就像使用软件一样，多数人都乐意于一直点”next”甚至是直接点开就可以开始体验到软件的功能。傻瓜式的操作，比较低的学习成本的确是软件开发者要考虑的问题，毕竟工具是服务于人的嘛。这是一段优化CSS代码的Js源代码，希望有点用。<br><a id="more"></a><br>这里只提供关键的几项，’encode’’decode’’purify’’code’’empty’ 这几个是事件ID，代表代码压缩、净化、格式化等操作。当然用的时候是要放在<script> </script>中间了。至于怎么用，你大可发挥无穷的想象力做出一个比较好的优化工具。<br><blockquote><p>var oEncodeBtn = document.getElementById(‘encode’);   // 压缩<br>var oDecodeBtn = document.getElementById(‘decode’);  // 美化<br>var oPurify = document.getElementById(‘purify’);    // 净化<br>var oCode = document.getElementById(‘code’);       // 源代码<br>var oEmpty = document.getElementById(‘empty’);    // 清空</p>
+<p>oEmpty.onclick = function() {  //执行清空<br>    oCode.value = ‘’<br>};</p>
+<p>oEncodeBtn.onclick = function() {//执行压缩<br>    var val = oCode.value;<br>    val = val.replace(/\/*(.|\n)<em>?\</em>\//g,’’); //去除注释<br>    val = val.replace(/^\s+|\s+$/g,’’); //清除首尾空格<br>    val = val.replace(/(:)\s+/g,’$1’); //去除冒号后多个空格<br>    val = val.replace(/\s{2,}/g,’ ‘); //去除多余空格2个以上<br>    val = val.replace(/,\s+|\s+,/g,’,’); //去除多个样式共享时的多余空格<br>    val = val.replace(/;{2,}|;\s+/g,’;’); //去除多个分号或分号后面多余空格<br>    val = val.replace(/\s<em>{\s</em>/g,’{‘); //去除选择符后面多余空格<br>    val = val.replace(/\s<em>}\s</em>/g,’}’); //去除选择器前面多余空格<br>    val = val.replace(/[\n\t\f\r]/g,’’); //去除换行,制表符,分页符,回车<br>    val = val.replace(/;}/g,’}’); //去除元素样式的最后分号<br>    oCode.value = val;<br>};</p>
+<p>oPurify.onclick = function() { //执行净化;<br>    oEncodeBtn.click();<br>    var val = oCode.value;<br>    val = val.replace(/}/g,’}\n’);<br>    oCode.value = val;<br>};</p>
+<p>oDecodeBtn.onclick = function() { //执行格式化<br>    var val = oCode.value;<br>    val = val.replace(/(*\/)\s+(\w)/g,’$1\n$2’); //格式化注释后的多余空格<br>    val = val.replace(/(:)\s+/g,’$1’); //格式化冒号间多余空格<br>    val = val.replace(/,\s+|\s+,/g,’,’); //格式化逗号间多余空格<br>    val = val.replace(/;{2,}|;\s+/g,’;’); //格式化分号后多余字符<br>    val = val.replace(/;}/g,’}’); //去除最后一个分号<br>    val = val.replace(/\s<em>{\s</em>/g,’ {\n\t’); //格式化左{<br>    val = val.replace(/\s<em>}\s</em>/g,’\n}\n’); //格式化左}<br>    val = val.replace(/\s<em>;\s</em>/g, ‘;\n\t’); //格式化属性<br>    oCode.value = val;<br>};</p></blockquote><br>比如你可以这样用：<br><a href="https://www.lylares.com/css.html">点击预览</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在优化网站的时候对小白来说就是能找到各种现成的工具。就像使用软件一样，多数人都乐意于一直点”next”甚至是直接点开就可以开始体验到软件的功能。傻瓜式的操作，比较低的学习成本的确是软件开发者要考虑的问题，毕竟工具是服务于人的嘛。这是一段优化CSS代码的Js源代码，希望有点用。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="https://www.lylares.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo托管到github和coding</title>
+    <link href="https://www.lylares.com//4-17.html"/>
+    <id>https://www.lylares.com//4-17.html</id>
+    <published>2017-04-17T15:50:36.000Z</published>
+    <updated>2017-04-20T02:43:45.577Z</updated>
+    
+    <content type="html"><![CDATA[<p>生命不息，折腾不止。前段时间折腾了IIS下的wordpress、Linux的wordpress，终于入了Hexo的坑，以后的重心应该会放到Hexo+Node.js了。<br><a id="more"></a><br>github和国内的coding真的挺有用，要不然就没有了这个站点。还有写出Hexo框架的台湾大神…要不然都没啥新东西折腾了O(∩_∩)O~，虽然博主是个技术渣渣。<br>今天把代码从github克隆到coding上了，做了双解析感觉访问速度是提升了不少哇。<br>托管到coding的步骤和托管到github类似，只是注意下配置和DNS解析。</p>
+<p>下面是根目录配置文件_config.yml的deploy配置：</p>
+<p><pre><br>deploy:<br>  type: git<br>  repo:<br>      github: <a href="https://github.com/yourname/yourname.github.io.git" target="_blank" rel="external">https://github.com/yourname/yourname.github.io.git</a><br>      coding: <a href="https://git.coding.net/yourname/yourname.git" target="_blank" rel="external">https://git.coding.net/yourname/yourname.git</a><br>  branch: master<br></pre><br>“yourname”替换成你自己的用户名。</p>
+<p>下面是DNS解析设置:<br><img src="https://ooo.0o0.ooo/2017/04/18/58f4f063497f9.jpg" alt="4.17双dns解析.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生命不息，折腾不止。前段时间折腾了IIS下的wordpress、Linux的wordpress，终于入了Hexo的坑，以后的重心应该会放到Hexo+Node.js了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="-hexo -github -coding" scheme="https://www.lylares.com/tags/hexo-github-coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇HEXO博客</title>
+    <link href="https://www.lylares.com//%E7%AC%AC%E4%B8%80%E7%AF%87HEXO%E5%8D%9A%E5%AE%A2.html"/>
+    <id>https://www.lylares.com//第一篇HEXO博客.html</id>
+    <published>2017-04-15T15:14:55.683Z</published>
+    <updated>2017-04-17T16:18:04.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>lylares的第一篇基于Github+Hexo的文章！<br><a id="more"></a><br>2017/04/16 1:33使用Github+Hexo搭建博客成功，失败了好多次啊！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;lylares的第一篇基于Github+Hexo的文章！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="-Hexo -Github" scheme="https://www.lylares.com/tags/Hexo-Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://www.lylares.com//hello-world.html"/>
+    <id>https://www.lylares.com//hello-world.html</id>
+    <published>2017-04-15T14:10:35.425Z</published>
+    <updated>2017-04-16T09:14:47.315Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无名</title>
+    <link href="https://www.lylares.com//something.html"/>
+    <id>https://www.lylares.com//something.html</id>
+    <published>2017-04-10T13:46:37.000Z</published>
+    <updated>2017-04-19T07:32:13.101Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>众鸟高飞尽，孤云独去闲。</p>
+<p>相看两不厌，只有敬亭山。</p>
+<p><span style="font-family: 'book antiqua', palatino, serif">-李白</span></p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;众鸟高飞尽，孤云独去闲。&lt;/p&gt;
+&lt;p&gt;相看两不厌，只有敬亭山。&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-family: &#39;book antiqua&#39;, palatino, serif&quot;&gt;-李白&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquo
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.lylares.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="无名" scheme="https://www.lylares.com/tags/%E6%97%A0%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos7安装wordpress全过程</title>
+    <link href="https://www.lylares.com//centos7-wordpress.html"/>
+    <id>https://www.lylares.com//centos7-wordpress.html</id>
+    <published>2017-04-09T06:47:33.000Z</published>
+    <updated>2017-04-17T16:15:32.802Z</updated>
+    
+    <content type="html"><![CDATA[<p>前两天把博客迁移到了阿里云，同时放弃了IIS（稳定性实在是太差了，动不动就挂掉o(╯□╰)o）用上了Linux。开始用阿里的一键部署WEB环境，非常傻瓜式的操作，推荐给小白不爱折腾用户。</p>
+<p>今天重新折腾了一遍，完全重新搭建Web环境。过程曲折，好在问题都解决了，现在把整个过程贴出来供喜欢折腾的参考吧。前期准备工作：</p>
+<p>买好服务器<br>安装镜像（博主用的最新的CentOS7）<br>电脑上安装ftp软件（Xshell5）,安装完后用你的账号密码登录上服务器。快捷键Ctrl+alt+f 安装好Xftp 5 待会要用。<br><a id="more"></a><br>现在回到xshell继续如下操作：<br><strong>1. 安装Nginx</strong></p>
+<p>#yum install nginx                                                                                         #配置文件处于/etc/nginx</p>
+<p>#systemctl start nginx                                                                                     #启动nginx</p>
+<p>#systemctl enable nginx.service                                                                            #设置为开机启动<br>然后测试：<a href="http://xxx.xxx.xxx.xx/" target="_blank" rel="external">http://xxx.xxx.xxx.xx/</a> xxx.xxx.xxx.xx为你外网ip地址<br>浏览器出现Nginx 的测试界面说明这步成功。</p>
+<p><strong>2. 安装Mysql</strong></p>
+<p>#rpm -Uvh <a href="http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm" target="_blank" rel="external">http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</a></p>
+<p>#yum repolist enabled | grep “mysql.<em>-community.</em>”</p>
+<p>#yum -y install mysql-community-server</p>
+<p>#yum -y install mysql-community-server                                                                      #安装社区版</p>
+<p>#systemctl start mysqld                                                                                     # 启动mysql</p>
+<p>#mysql_secure_installation # mysql安全安装，输入root密码，选择的时候一路点y</p>
+<p>#update user set password=password(‘<strong><em>**</em></strong>‘) where user=’root’        <span style="color: #ff0000">#一定要给数据库ftp密码修改了不然后面不能新建数据库（<strong><em>*</em></strong>部分是你的新密码）</span></p>
+<p><strong>3. 安装PHP</strong></p>
+<p>#yum install php-fpm php-mysql</p>
+<p>#systemctl start php-fpm                                                                                    #启动php-fpm</p>
+<p>#systemctl enable php-fpm #设置开机启动</p>
+<p><strong>4.创建网站根目录</strong></p>
+<p>#mkdir /usr/www</p>
+<p>#chown -R apache:apache /usr/www                                                               <span style="color: #ff0000">#非常重要，网上遇到的”无法创建目录”问题就是这个没有给权限</span></p>
+<p><strong>5.修改Nginx配置文件</strong><br>打开/etc/nginx下的nginx.conf，其中server部分修改如下：</p>
+<p><pre>server {<br>listen 80 default_server;<br>listen [::]:80 default_server;<br>server_name ffflipped.cn;<br>root /usr/www;<br>Load configuration files for the default server block.<br>include /etc/nginx/default.d/<em>.conf;<br>location / {<br>index index.php;<br>try_files $uri $uri/ /index.php?$args;<br>}<br>rewrite /wp-admin$ $scheme://$host$uri/ permanent;<br>location ~</em> ^.+.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {<br>access_log off; log_not_found off; expires max;<br>}<br>location ~ .php$ {<br>try_files $uri =404;<br>fastcgi_split_path_info ^(.+.php)(/.+)$;<br>fastcgi_pass 127.0.0.1:9000;<br>fastcgi_index index.php;<br>fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br>include fastcgi_params;<br>}<br>}</pre><br>保存后重载nginx</p>
+<p>#systemctl reload nginx<br>在/usr/www 目录中创建 index.php(小白就用刚才的xftp5在目录中新建一个就是O(∩_∩)O~)<br>然后浏览器访问你的外网ip xxx.xxx.xxx.xx 若成功就看到php的一些版本配置信息。</p>
+<p><strong>6.安装wordpres</strong></p>
+<p>#mysql -uroot -p</p>
+<p>#create database xxxx xxxx为你想创建的数据库名称<br>从<a href="https://cn.wordpress.org/下载" target="_blank" rel="external">https://cn.wordpress.org/下载</a> wordpress 解压上传到/usr/www目录<br>通过<a href="http://xxx.xxx.xxx.xx/wordpress访问，按照提示进行安装，添加mysql用户名和密码，输入wordpress相关的用户名和密码，然后创建成功。" target="_blank" rel="external">http://xxx.xxx.xxx.xx/wordpress访问，按照提示进行安装，添加mysql用户名和密码，输入wordpress相关的用户名和密码，然后创建成功。</a></p>
+<p>自此网站搭建完成，博主在接下来的过程中遇到了如下问题：</p>
+<p><span style="font-size: 10pt"><strong>1.更新需要ftp账号密码</strong></span><br>在根目录下的wp-config.php文件中添加如下项：<br>_define(“FS<em>METHOD”, “direct”);</em><br>_define(“FS_CHMOD<em>DIR”, 0777);</em><br>_ define(“FS_CHMOD<em>FILE”, 0777);</em></p>
+<p><span style="font-size: 10pt"><strong>2.wordpress自带导入xml时显示空白</strong></span><br>执行命令：yum install php-xml</p>
+<p><span style="font-size: 10pt"><strong>3.wordpress自带导入504 time get out</strong></span><br>在etc/nginx/下的nginx.config 增加 fastcgi_buffers 8 128k;</p>
+<p>自此Linux下的wordpress完美运行。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天把博客迁移到了阿里云，同时放弃了IIS（稳定性实在是太差了，动不动就挂掉o(╯□╰)o）用上了Linux。开始用阿里的一键部署WEB环境，非常傻瓜式的操作，推荐给小白不爱折腾用户。&lt;/p&gt;
+&lt;p&gt;今天重新折腾了一遍，完全重新搭建Web环境。过程曲折，好在问题都解决了，现在把整个过程贴出来供喜欢折腾的参考吧。前期准备工作：&lt;/p&gt;
+&lt;p&gt;买好服务器&lt;br&gt;安装镜像（博主用的最新的CentOS7）&lt;br&gt;电脑上安装ftp软件（Xshell5）,安装完后用你的账号密码登录上服务器。快捷键Ctrl+alt+f 安装好Xftp 5 待会要用。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="CentOS7" scheme="https://www.lylares.com/tags/CentOS7/"/>
+    
+      <category term="Linux" scheme="https://www.lylares.com/tags/Linux/"/>
+    
+      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+    
+      <category term="阿里云" scheme="https://www.lylares.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>这些年收藏的音乐</title>
+    <link href="https://www.lylares.com//music.html"/>
+    <id>https://www.lylares.com//music.html</id>
+    <published>2017-04-06T16:00:06.000Z</published>
+    <updated>2017-04-17T16:15:53.828Z</updated>
+    
+    <content type="html"><![CDATA[<p>博主曾是Songtaste音乐站粉，这里能找到其他渠道找不到的小众音乐。遗憾的是由于某些原因去年网站已经关停，现在已经彻底从网络消失了。于是我陆续把自己收藏的音乐的大部分都放在了360云盘…糟糕的是360云盘也宣布关闭(；′⌒`)……此处<strong><em>*</em></strong>当初为何选择了360云盘呢？因为当时送的免费空间真的多。<br><a id="more"></a><br>最近看了看资源，包括压缩包大概有230个G左右，解压出来的话更多。已经下载了一部分转移到了网易云音乐。网盘下载速度奇慢，快速下载只有一个一个的在网页版点击下载,超过50m的大文件就只有用网盘去下载了。难道只有付费转移企业盘再下载才快？太坑爹了，吸取教训准备自己的硬盘吧。</p>
+<p><a href="https://www.lylares.cn/wp-content/uploads/2017/04/20170406135238312.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170406135238312-300x158.png" alt="music"></a><br>那些年的音乐</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;博主曾是Songtaste音乐站粉，这里能找到其他渠道找不到的小众音乐。遗憾的是由于某些原因去年网站已经关停，现在已经彻底从网络消失了。于是我陆续把自己收藏的音乐的大部分都放在了360云盘…糟糕的是360云盘也宣布关闭(；′⌒`)……此处&lt;strong&gt;&lt;em&gt;*&lt;/em&gt;&lt;/strong&gt;当初为何选择了360云盘呢？因为当时送的免费空间真的多。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="songtaste" scheme="https://www.lylares.com/tags/songtaste/"/>
+    
+      <category term="音乐" scheme="https://www.lylares.com/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那些实用的工具网站</title>
+    <link href="https://www.lylares.com//tools.html"/>
+    <id>https://www.lylares.com//tools.html</id>
+    <published>2017-04-05T14:24:37.000Z</published>
+    <updated>2017-04-17T16:16:34.527Z</updated>
+    
+    <content type="html"><![CDATA[<p>上一期推荐了几个有点意思的网站，今天分享几个实用的工具。为什么要分享这些呢？</p>
+<p><span style="font-family: wingdings, 'zapf dingbats'; font-size: 10pt">不是所有人都能从互联网中获得自己的需求，也不是都能发现与之需求匹配的产品，更不是都能获得最优的解决方案。</span><br><a id="more"></a><br>博主抛砖引玉，希望能发现更好用的工具。</p>
+<p><strong>1.TingJPG</strong></p>
+<p>非常不错的图片在线压缩网站，效果良心，操作傻瓜式。支持同时上传压缩20张不超过5M大小的图片，当然如果你是壕可以购买会员解锁更多特性，对于普通用户来说免费的已经够用了。</p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170406125654182.png" alt="TinyJPG"><br> <a href="https://tinyjpg.com/" target="_blank" rel="external">https://tinyjpg.com/</a></p>
+<p><strong>2.智图</strong></p>
+<p>从名称看出来一定和图片有关系，没错这也是一个免费的图片压缩网站。和TingJPG不同的是你可以自由选择图片从10到95等级的压缩品质并且可以预览对比压缩前后的图片。实际使用效果来看和TingJPG无大出入，甚至压缩比例偶尔能更高。当然聪明的你也许会结合两工具来用，比如图片在Ting上不能压缩可以尝试 在此站尝试再压缩，反之亦然…没错，博主就是这样做的O(∩_∩)O~</p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170406125718556.png" alt="智图"><br><a href="https://zhitu.isux.us/" target="_blank" rel="external">https://zhitu.isux.us/</a></p>
+<p><strong>3.smoogif</strong></p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170406125745656.png" alt="smoogif"><br><a href="https://www.soogif.com/compress" target="_blank" rel="external">https://www.soogif.com/compress</a></p>
+<p>没错，如其名。这是一个免费的gif多功能网站，不仅提供gif压缩、编辑、裁剪、视频转gif等常用工具，同时提供gif资源的下载，还提供了动图的API供使用。</p>
+<p><strong>4.logoko</strong></p>
+<p>这是一个logo设计网站，博主比较喜欢网站简洁的风格。你可以自定义网站的文字、slogan、排列的位置以及在线的图标搜索，同时提供三种场景下的预览。推荐使用。</p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170406125813146.png" alt="logoko"><br> <a href="https://www.logoko.com.cn/design" target="_blank" rel="external">https://www.logoko.com.cn/design</a></p>
+<p><strong>5.Streetwill</strong></p>
+<p>这是一个图片资源网站，博主非常喜欢其设计风格，图片质量非常高，缺点是更新太慢了….</p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170406125921462.png" alt="Streeeetwill"><br> <a href="https://streetwill.co/posts" target="_blank" rel="external">https://streetwill.co/posts</a></p>
+<hr>
+<p>True,False=False,True</p>
+<p>Print(True,False)</p>
+<p>O(∩_∩)O~</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一期推荐了几个有点意思的网站，今天分享几个实用的工具。为什么要分享这些呢？&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-family: wingdings, &#39;zapf dingbats&#39;; font-size: 10pt&quot;&gt;不是所有人都能从互联网中获得自己的需求，也不是都能发现与之需求匹配的产品，更不是都能获得最优的解决方案。&lt;/span&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="工具" scheme="https://www.lylares.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="网站" scheme="https://www.lylares.com/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>医疗信息类移动端原型</title>
+    <link href="https://www.lylares.com//medical-product.html"/>
+    <id>https://www.lylares.com//medical-product.html</id>
+    <published>2017-04-02T14:20:50.000Z</published>
+    <updated>2017-04-17T16:15:45.612Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个APP是博主曾经参与过的实际项目的一部分，要说明的是仅仅是一部分，涉及到公司的信息都有做处理…<br><a id="more"></a><br>先上实际演示效果：<br><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170403174406376-168x300.jpg" alt="医疗app"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170403174431732-169x300.jpg" alt="医疗app2"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170403174458542-169x300.png" alt="医疗app3"><br><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170403174833283-168x300.png" alt="医疗app5"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170403174557776-169x300.jpg" alt="医疗app6"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/20170403174616209-169x300.png" alt="医疗app7"></p>
+<p>整个APP包含如下效果：</p>
+<p>同步系统时间；</p>
+<p>“首页”具有轮播的焦点图、下拉刷新提示效果，内容改变效果、动态图标及其他特效</p>
+<p>“测试”页具有 上下浮动动态提示效果、翻页及页面计数及其他细节</p>
+<p>“发现”页具有内容动态调整、内容随焦点变化等效果</p>
+<p><span style="color: #2387f5"><a href="https://www.lylares.cn/hv1/app-hp.html" target="_blank" rel="external">点击查看效果</a></span></p>
+<p><span style="font-size: 10pt">建议PC端使用Chrome浏览器浏览，以获得最佳体验。</span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这个APP是博主曾经参与过的实际项目的一部分，要说明的是仅仅是一部分，涉及到公司的信息都有做处理…&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="axure" scheme="https://www.lylares.com/tags/axure/"/>
+    
+      <category term="医疗" scheme="https://www.lylares.com/tags/%E5%8C%BB%E7%96%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WordPress内容指定用户可见</title>
+    <link href="https://www.lylares.com//wordpress.html"/>
+    <id>https://www.lylares.com//wordpress.html</id>
+    <published>2017-03-31T11:53:15.000Z</published>
+    <updated>2017-04-17T16:17:02.492Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是实现wordpress评论回复可见的简明教程，这篇文章从博主以前wp迁移而来…<br><a id="more"></a><br>首先申明原始代码博主也是网上找的，就是评论回复可见的代码，放到主题function.php里。原始内容如下：</p>
+<pre class="php">function reply_to_read($atts, $content=null) {   
+        extract(shortcode_atts(array("notice" =&gt; '&lt;p class="reply-to-read"&gt;温馨提示: 此处内容需要&lt;a href="#respond" title="评论本文"&gt;评论本文&lt;/a&gt;后才能查看.&lt;/p&gt;'), $atts));   
+        $email = null;   
+        $user_ID = (int) wp_get_current_user()-&gt;ID;   
+        if ($user_ID &gt; 0) {   
+            $email = get_userdata($user_ID)-&gt;user_email;   
+            //对博主直接显示内容   
+            $admin_email = "xxx@aaa.com"; //博主Email   
+            if ($email == $admin_email) {   
+                return $content;   
+            }   
+        } else if (isset($_COOKIE['comment_author_email_' . COOKIEHASH])) {   
+            $email = str_replace('%40', '@', $_COOKIE['comment_author_email_' . COOKIEHASH]);   
+        } else {   
+            return $notice;   
+        }   
+        if (empty($email)) {   
+            return $notice;   
+        }   
+        global $wpdb;   
+        $post_id = get_the_ID();   
+        $query = "SELECT `comment_ID` FROM {$wpdb-&gt;comments} WHERE `comment_post_ID`={$post_id} and `comment_approved`='1' and `comment_author_email`='{$email}' LIMIT 1";   
+        if ($wpdb-&gt;get_results($query)) {   
+            return do_shortcode($content);   
+        } else {   
+            return $notice;   
+        }   
+    }   
+
+    add_shortcode('reply', 'reply_to_read');</pre>
+实现原理就是判断当前用户登录状态和用户的邮箱账号。
+<pre class="php"> $admin_email = "xxx@aaa.com"; //博主Email   
+            if ($email == $admin_email) {   
+                return $content;   
+            }</pre>
+以上部分是对管理员的账号的用户内容可见，判断当前用户email是否为管理员的邮箱。所以要实现对指定用户可见就可以增加一个变量比如：user1_email,再和当前用户email对比。
+<pre class="php">$user1_email = "xxx@aaa.com"; //你需要设置可见的用户Email   
+            if ($email == $user1_email) { 
+                return $content; 
+            }</pre>
+这样就实现了内容对多人可见。实际上就是增加了个判断，实现指定用户可见，其他人需要回复，完整代码就这样：
+<pre class="php">function reply_to_read($atts, $content=null) {   
+        extract(shortcode_atts(array("notice" =&gt; '&lt;p class="reply-to-read"&gt;温馨提示: 此处内容需要&lt;a href="#respond" title="评论本文"&gt;评论本文&lt;/a&gt;后才能查看.&lt;/p&gt;'), $atts));   
+        $email = null;   
+        $user_ID = (int) wp_get_current_user()-&gt;ID;   
+        if ($user_ID &gt; 0) {   
+            $email = get_userdata($user_ID)-&gt;user_email;   
+            //对博主直接显示内容   
+            $admin_email = "xxx@aaa.com"; //博主Email   
+            if ($email == $admin_email) {   
+                return $content;   
+            }
+            $user1_email = "xxx@aaa.com"; //你需要设置可见的用户Email   
+            if ($email == $user1_email) { 
+                return $content; 
+            }
+       else if (isset($_COOKIE['comment_author_email_' . COOKIEHASH])) { 
+       $email = str_replace('%40', '@', $_COOKIE['comment_author_email_' . COOKIEHASH]);
+      } else {
+             return $notice; } 
+       if (empty($email)) {
+        return $notice; 
+        } global $wpdb;
+        $post_id = get_the_ID();
+        $query = "SELECT `comment_ID` FROM {$wpdb-&gt;comments} WHERE `comment_post_ID`={$post_id} and `comment_approved`='1' and `comment_author_email`='{$email}' LIMIT 1"; 
+       if ($wpdb-&gt;get_results($query)) { 
+        return do_shortcode($content);
+        } else {
+          return $notice; 
+        }
+   }   
+  add_shortcode('reply', 'reply_to_read');</pre>
+
+<p>博主是PHP小白，代码还可以进一步简化的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是实现wordpress评论回复可见的简明教程，这篇文章从博主以前wp迁移而来…&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+    
+      <category term="评论可见" scheme="https://www.lylares.com/tags/%E8%AF%84%E8%AE%BA%E5%8F%AF%E8%A7%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Axure进度条原型（最新版）</title>
+    <link href="https://www.lylares.com//axure-model.html"/>
+    <id>https://www.lylares.com//axure-model.html</id>
+    <published>2017-03-30T02:59:06.000Z</published>
+    <updated>2017-04-17T16:14:51.282Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用Axure做了两个进度条效果，条形和环状。分别以多种方式实现…<br><a id="more"></a><br>做了两个进度条效果，条形和环状。先上效果，稍后再上传原型分享制作步骤。对条形进度条增加了新的制作方式。<br>最新版:<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402141559956.jpg" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402141559956-258x300.jpg" alt="axure进度条"></a><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402141612834.jpg" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402141612834-300x201.jpg" alt="axure进度条"></a></p>
+<p>1.进度条方式一通过<span style="color: #2387f5">设置元件宽度实现。</span></p>
+<p>2.进度条方式二通过<span style="color: #2387f5">水平移动元件来实现。</span></p>
+<p>3.圆形进度条通过<span style="color: #2387f5">旋转元件、设置元件层级、设置元件尺寸实现伴随效果。</span><br>在线演示效果:<span style="color: #3366ff"><a href="https://www.lylares.cn/jdt/jdt.html" target="_blank" rel="external">点击查看</a></span><br>原型rp文件:[bdbtn]<a href="https://www.lylares.cn/wp-content/uploads/2017/04/20170402004922419.rar[/bdbtn" target="_blank" rel="external">https://www.lylares.cn/wp-content/uploads/2017/04/20170402004922419.rar[/bdbtn</a>]<br>解压密码:[reply]cor550[/reply]</p>
+<p><span style="font-size: 10pt">建议PC端使用Chrome浏览器浏览，以获得最佳体验。</span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用Axure做了两个进度条效果，条形和环状。分别以多种方式实现…&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="axure" scheme="https://www.lylares.com/tags/axure/"/>
+    
+      <category term="进度条" scheme="https://www.lylares.com/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>神探狄仁杰第四部-情花案</title>
+    <link href="https://www.lylares.com//video.html"/>
+    <id>https://www.lylares.com//video.html</id>
+    <published>2017-03-29T05:36:06.000Z</published>
+    <updated>2017-04-17T16:16:52.570Z</updated>
+    
+    <content type="html"><![CDATA[<p>等了好久好久，终于出来鸟O(∩_∩)O~，虽然换人了还是喜欢看啊。找到免费资源真不容易啊。</p>
+<p>&nbsp;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;等了好久好久，终于出来鸟O(∩_∩)O~，虽然换人了还是喜欢看啊。找到免费资源真不容易啊。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="随记" scheme="https://www.lylares.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+    
+    
+      <category term="电视剧" scheme="https://www.lylares.com/tags/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WP不能正常发邮件解决方案</title>
+    <link href="https://www.lylares.com//wordpress-smtp.html"/>
+    <id>https://www.lylares.com//wordpress-smtp.html</id>
+    <published>2017-03-24T06:53:09.000Z</published>
+    <updated>2017-04-17T16:17:16.539Z</updated>
+    
+    <content type="html"><![CDATA[<p>用wordpress搭建的博客在不同主机下可能会遇到不能正常发邮件的问题。博主最近也遇到了这个问题，网上搜索了半天各种办法都用尽了还是没有解决问题o(╯□╰)o…正要放弃的时候突然想到是不是邮箱的问题啊，于是换了几个邮箱终于把这个问题解决了。<br><a id="more"></a><br>首先，如果你的主机不支持main()函数啥的那就不折腾果断用smtp发邮件，我用的是wp-mail-smtp 这个插件。<br>邮箱选择：博主测试了QQ邮箱、Hotmail邮箱…都不行，只有163邮箱没出现问题。<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402135503476.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402135503476-300x176.png" alt="smtp"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402135143968.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402135143968-300x176.png" alt="wp_smtp"></a></p>
+<p>插件的设置是这样的：<br>From Email          这里的邮箱和 Username 这里的要一致。(切记！)<br>From Name           随便填；                                   Mailer  选择第一项<br>Return Path         我没填<br>SMTP Host           smtp.163.com<br>SMTP Port           25                                       Encryption 选择第一项 No encryption.<br>Authentication      选择第二项（切记！）<br>Username            你的邮箱同From Email<br>Password            邮箱密码</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用wordpress搭建的博客在不同主机下可能会遇到不能正常发邮件的问题。博主最近也遇到了这个问题，网上搜索了半天各种办法都用尽了还是没有解决问题o(╯□╰)o…正要放弃的时候突然想到是不是邮箱的问题啊，于是换了几个邮箱终于把这个问题解决了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+    
+      <category term="mail函数" scheme="https://www.lylares.com/tags/mail%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="smtp" scheme="https://www.lylares.com/tags/smtp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站被百度K掉了</title>
+    <link href="https://www.lylares.com//baidu.html"/>
+    <id>https://www.lylares.com//baidu.html</id>
+    <published>2017-03-23T01:31:43.000Z</published>
+    <updated>2017-04-17T16:15:24.046Z</updated>
+    
+    <content type="html"><![CDATA[<p>这几天几乎天天都在改整个网站的后端，导致网站访问经常出问题，也就这样百度k掉了整站，不过其他搜索引擎还能正常搜索o(╯□╰)o。原因居然是全站启用https，郁闷的抛弃了小绿锁啊！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这几天几乎天天都在改整个网站的后端，导致网站访问经常出问题，也就这样百度k掉了整站，不过其他搜索引擎还能正常搜索o(╯□╰)o。原因居然是全站启用https，郁闷的抛弃了小绿锁啊！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="https" scheme="https://www.lylares.com/tags/https/"/>
+    
+      <category term="ssl" scheme="https://www.lylares.com/tags/ssl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人电子书收藏</title>
+    <link href="https://www.lylares.com//my-ebook.html"/>
+    <id>https://www.lylares.com//my-ebook.html</id>
+    <published>2017-03-21T14:20:09.000Z</published>
+    <updated>2017-04-17T16:16:10.531Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近整理了一下个人看过的、收藏的电子书。不看不知道，不完全统计居然有6200多本 (<em>@ο@</em>) ～ ！各种类型（经典文学、畅销洗脑、鸡汤…）,各种格式（pdf,epub,mob,kindle,txt…）应有尽有。。。<br><a id="more"></a><br>待稍作整理传到服务器上分享出来，要是需要的话可以给博主留言（仅供个人学习）。部分截图：<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402133722656.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402133722656-300x166.png" alt="世界名著"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402133747287.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402133747287-300x168.png" alt="外国文学"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402133813688.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402133813688-300x165.png" alt="社科文学"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402134231705.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402134231705-300x168.png" alt="文学名著"></a><br>需要请给博主留言。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近整理了一下个人看过的、收藏的电子书。不看不知道，不完全统计居然有6200多本 (&lt;em&gt;@ο@&lt;/em&gt;) ～ ！各种类型（经典文学、畅销洗脑、鸡汤…）,各种格式（pdf,epub,mob,kindle,txt…）应有尽有。。。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="ebook" scheme="https://www.lylares.com/tags/ebook/"/>
+    
+      <category term="电子书" scheme="https://www.lylares.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那些有意思的网站</title>
+    <link href="https://www.lylares.com//something-interesting.html"/>
+    <id>https://www.lylares.com//something-interesting.html</id>
+    <published>2017-03-19T02:00:25.000Z</published>
+    <updated>2017-04-17T16:16:27.855Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天分享一些个人收藏的比较有趣的网站。<br><a id="more"></a><br><strong>1.Dribbble</strong><br>非常不错的一个设计作品交流站点，有很多高质量的UI创意。<br><img src="https://ooo.0o0.ooo/2017/03/29/58db40e17680b.gif" alt="Dribbble"></p>
+<p>&nbsp;</p>
+<p><strong>2.Nipponcolors</strong><br>一个日系素雅风格的配色网站，比较有意思的是可以开启右侧的’Munsell’动态展示来寻找色彩灵感。<br><img src="https://ooo.0o0.ooo/2017/03/29/58db40dc4b5ae.png" alt="Nipponcolors"></p>
+<p>&nbsp;</p>
+<p><strong>3.LibreStock</strong><br>想找一些高上大的图片素材用这个是个不错的选择，图片界的Google,当然是免费下载使用的。<br><img src="https://ooo.0o0.ooo/2017/03/29/58db40daaa135.png" alt="librestock"></p>
+<p>&nbsp;</p>
+<p><strong>4.New Old Stock</strong><br>对于喜欢复古风格的来说，New Old Stock或许能够满足你的需求。<br><img src="https://ooo.0o0.ooo/2017/03/29/58db40df4f560.png" alt="New Old Stock"></p>
+<hr>
+<p>以上都是关于设计需要的，接下来来几个有意思的：<br><strong>5.GIPHY</strong><br>平时QQ，微信 一大波斗图的，要么自己用PS啥的自己修修改改，要么就是从别人那收藏复制粘贴。GIPHY上可是什么奇葩新颖的都有，还是当伸手党好啊！O(∩_∩)O~<br><img src="https://ooo.0o0.ooo/2017/03/29/58db40df92a66.png" alt="GIPHY"></p>
+<p>&nbsp;</p>
+<p><strong>6.jiumo E-book</strong><br>如果你喜欢读书，还舍不得买…鸠摩搜书可以帮你得到免费的电子书资源，资源涵盖了百度云盘、Kindle以及其他网络上的资源。</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/29/58db40daaffba.png" alt="jiumo"></p>
+<p>&nbsp;</p>
+<p><strong>7.世界数字图书馆</strong><br>由联合国教科文组织协办的，提供了图书、地图、手抄本、影片与照片等资源，涨姿势啊。</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/29/58db40e00d4ce.png" alt="世界数字图书馆"></p>
+<p>&nbsp;</p>
+<p><strong>8.互联网时光机器</strong><br>闲来无事我想知道现在牛逼的腾讯公司最初的官网是啥样子的呢？Internet Archive Wayback Machine 可以实现。</p>
+<p><img src="https://ooo.0o0.ooo/2017/03/29/58db40dc3b4f7.png" alt="互联网时光机器"></p>
+<p>&nbsp;</p>
+<p><span style="color: #2387f5"><strong>最后强烈推荐:</strong></span><br>自动调整屏幕色温减少蓝光，长时间玩电脑必备的神器：<span style="color: #2387f5"><a href="https://justgetflux.com" target="_blank" rel="external">f.lux</a></span></p>
+<p>今天先到这里吧，不定时再分享些有意思的东西O(∩_∩)O~…<br><del>主要是比较懒，不喜欢打字。</del></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天分享一些个人收藏的比较有趣的网站。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="设计" scheme="https://www.lylares.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Axure实现音乐播放效果</title>
+    <link href="https://www.lylares.com//axure-music.html"/>
+    <id>https://www.lylares.com//axure-music.html</id>
+    <published>2017-03-13T10:13:47.000Z</published>
+    <updated>2017-04-19T08:07:12.878Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近做了一个网易云音乐移动端的demo，由于强迫症所以做成了高保真的效果。我将分享一下播放界面的制作过程，因为播放界面对于播放时间、歌词同步、播放状态等都涉及到用函数实现，稍微复杂些。<br><a id="more"></a><br><strong>整体效果预览：</strong><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142911812.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142911812-168x300.png" alt="网易云音乐原型1"></a> <a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142936308.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142936308-169x300.png" alt="网易云音乐原型2"></a> <a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142954497.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402142954497-170x300.png" alt="网易云音乐原型3"></a><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143016860.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143016860-169x300.png" alt="网易云音乐原型4"></a><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/2017040214303181.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/2017040214303181-169x300.png" alt="网易云音乐5"></a> <a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143043304.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143043304-170x300.png" alt="网易云音乐6"></a></p>
+<p><strong>1.分析结构</strong></p>
+<p>首先分析整个界面构成，点击底部导航菜单时候，上部分内容依次改变，音乐播放界面的入口始终在顶层。所以我们大致可以把整个界面分为两大部分：上部内容部分以及底部导航栏。</p>
+<p>结构已经清晰，那么内容部分就可以用内联框架去加载，点击每个导航菜单下的内容依次加载发现音乐、我的音乐、朋友、账号 页面内容。左图空白部分是整个界面的核心部分：内联框架，下部分是导航菜单。</p>
+<p><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402143453438-168x300.png" alt=""></p>
+<p><strong>2.实现同步系统时间</strong></p>
+<p>在右上角会有一个两个状态的动态面板，在页面加载的时候会以1s的时间去切换状态。这个面板是为了实现时间同步系统时间，实现步骤很简单：在动态面板状态改变的时候-设置时间显示在一个文本框上面即可。<br>小时部分：</p>
+<p><pre>[[0.concat(Now.getHour()).substr((0.concat(Now.getHour()))).length-2,2)]]</pre><br>分钟部分:</p>
+<p><pre>[[(0.concat(Now.getMinutes()).substr((0.conncat(Now.getMinutes())).length-2,2)]]</pre><br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144248884.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144248884-300x198.png" alt="获取系统时间"></a></p>
+<p>这里用到了几个函数：.concat() 用于字符串的连接、Now.getHour()用于获取系统小时数、 Now.getMinute()获取系统分钟数、.substr(x,y)从参数x开始截取y个字符串、.length 获取字符串长度 。我们想要的格式是这样：00:00</p>
+<p>首先分析小时数：Now.getHour()获得的小时可能是一位数的我们可以在前面填充0来补足位数于是就用0.concat(Now.getHour())<br>但是这个函数连接了0和小时数，当小时数超过1位数的时候获得的值可能是这样010，这显然不符合我们的要求，我们需要得到后面的两位数10，于是substr()函数有用了:substr((0.concat(Now.getHour()))).length-2,2)<br>substr()从0.concat(Now.getHour() 的length-2位置，也就是倒数第二位开始截取并截取2位数，于是010变成10。分钟数的实现方法同理不再赘述。到这里同步系统时间完成。<br><!--nextpage--><br><strong>3.音乐播放界面实现</strong><br><span style="color: #3366ff">首先要实现这样的效果：</span><br>点击播放按钮音乐开始播放，同时中部的指针接触到唱片，唱片同步旋转，底部播放时间秒级增加，剩余秒级时间减少，时间线变成红色同步向右移动。点击中间部分切换到歌词页面，歌词同步向上移动。再次点击播放按钮时所有动作停止。指针远离唱片。<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144857339.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144857339-171x300.png" alt="播放主界面"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144923810.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402144923810-185x300.png" alt="歌词"></a><br>元件准备：<br>播放按钮为动态面板play，状态为未播放时的play已经播放时的plus<br>播放时间为文本框star,剩余播放时间为end文本框<br>中间的状态线为动态面板slide小圆点，动态面板slide_frontcol包含一条红色线条slide_colorline位置（-206,0），初始状态线slide_line未于slide_frontcol下一层<br>中部顶层为一个热区，实现点击切换歌词界面<br>中部底层为一个动态面板poc_fm包含默认状态fm和歌词界面gc（fm状态里有唱片pic_pod以及指针xz_line；gc状态里一个动态面板里包含歌词lyric矩形、两个阴影矩形  实现当前歌词突出显示）<br>一个位于底部的内联框架用于音乐文件的加载<br><span style="color: #3366ff">右上角有一个隐藏的具有两个状态的动态面板’时间控制’，也是播放时间控制得以实现的核心元件</span></p>
+<p>分析：<br>以上所有的动作都由播放按钮触发，播放按钮有播放和暂停两种状态，所以播放按钮可以用一个动态面板以两个状态分别表示播放和暂停。</p>
+<p>音乐的加载用内联框架实现。</p>
+<p>音乐时间用两个变量playtime和playtime2表示，变量的初始值为00:00和总时长03:30，用一个以1s切换一次的动态面板去控制播放时间刚好以1s步进，两个变量分别递增和递减。音乐播放的时候切换这个动态面板，那么时间就随之改变了。</p>
+<p>单击点击播放按钮时候，切换播放按钮状态，判断播放按钮所处的状态，如果在播放就把指针旋转到原来位置。停止音乐播放，切换播放按钮状态为停止。如果没有播放则播放音乐，设置时间控制动态面板状态开始循环变化，旋转指针和唱片。</p>
+<p>时间控制面板状态改变的时候设置两个变量值并水平移动底部的时间线，同步垂直移动歌词面板。</p>
+<p>播放按钮的点击事件以及状态改变事件 以及“时间控制”动态面板的状态改变事件：</p>
+<p><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145726752.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145726752-300x274.png" alt="播放按钮事件"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145736669.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145736669-175x300.png" alt="时间控制动态面板"></a></p>
+<p>播放时间值：</p>
+<p><pre>[[‘0’.concat(math.floor(playtime/60)).slice(-2)]]:[[‘0’.concat(playtime%60).slice(-2)]]</pre><br>math.floor()：返回小数向下最接近的整数<br>剩余时间值：</p>
+<p><pre>[[‘0’.concat(math.floor(playtime2/60)).slice(-2)]]:[[‘0’.concat(playtime2%60).slice(-2)]]</pre><br>时间线水平移动值：</p>
+<p><pre>[[playtime/210*200+b.x]]</pre><br>时间控制里的其他项是控制歌词的移动，实现歌词和歌曲的同步。</p>
+<p>slide线条移动：<br><a href="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145503743.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402145503743-300x146.png" alt="状态线移动设置"></a><br>原型rp文件：<a href="http://www.lylares.cn/wp-content/uploads/2017/04/20170402004941822.rar" target="_blank" rel="external">http://www.lylares.cn/wp-content/uploads/2017/04/20170402004941822.rar</a><br>在线演示效果:<span style="color: #3366ff"><a target="blank" href="https://www.lylares.cn/wy/index.html">点击查看</a></span><br>解压密码:pk215</p>
+<p><span style="font-size: 10pt">建议PC端使用Chrome浏览器浏览，以获得最佳体验。</span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近做了一个网易云音乐移动端的demo，由于强迫症所以做成了高保真的效果。我将分享一下播放界面的制作过程，因为播放界面对于播放时间、歌词同步、播放状态等都涉及到用函数实现，稍微复杂些。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="axure" scheme="https://www.lylares.com/tags/axure/"/>
+    
+      <category term="网易云音乐" scheme="https://www.lylares.com/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VBA实现模糊查询</title>
+    <link href="https://www.lylares.com//vba.html"/>
+    <id>https://www.lylares.com//vba.html</id>
+    <published>2017-03-05T08:13:54.000Z</published>
+    <updated>2017-04-17T16:16:41.637Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Excel里需要用到查询时，一般想到的是Ctrl+F。但在实际使用中有诸多缺陷，比如当结果存在多情况时，通过这种方式并不能实现多结果的返回。于是我们想到了数组公式或者辅助列。这里用另外一种方式即VB代码实现，代码并不长，简洁易懂！文末提供源文件下载。<br><a id="more"></a><br><a href="https://www.lylares.cn/wp-content/uploads/2017/04/2-2.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/2-2-300x150.png" alt="excel,vb"></a><a href="https://www.lylares.cn/wp-content/uploads/2017/04/3-21.png" target="_blank" rel="external"><img src="https://www.lylares.cn/wp-content/uploads/2017/04/3-21-300x150.png" alt="excel,vb"></a><br>这里以A:K列为源数据区域，单元格L5以下列返回模糊查找的值，单元格M5以下列返回结果所在的位置，当点击按钮时弹出输入框，确定后返回结果。<br>以下是源代码：</p>
+<pre class="">Sub findAll()
+Dim findsm As String, address As String
+Dim sc As Range, rs As Range, fCount As Long
+findsm = InputBox("找什么(⊙o⊙)?")
+If Len(findsm) &amp;gt; 0 Thens
+  clearFinds
+  Set sc = Range("a1").CurrentRegion
+  Set rs = sc.find(What:=findsm)
+If Not rs Is Nothing Then
+  address = rs.address
+  Do
+  Range("L5").Offset(fCount).Value = rs.Value
+  Range("M5").Offset(fCount).Value = rs.address
+  Set rs = sc.FindNext(rs)
+  fCount = fCount + 1
+    Loop While Not rs Is Nothing And rs.address&lt;&gt;address
+End If
+End If
+End Sub</pre>
+....执行清空...
+<pre>Sub clearFinds()
+Range(Range("L5:M5"), Range("L5:M5").End(xlDown)).Clear
+End Sub</pre>
+
+<hr>
+<p>此代码用了一个自定义函数，在循环查找这里可能有些不好理解：</p>
+<p><pre class="">If Not rs Is Nothing Then<br>address = rs.address</pre><br>…匹配到赋值（单元格所在位置）给变量…</p>
+<p><pre>Do<br>Range(“L5”).Offset(fCount).Value = rs.Value</pre><br>…返回值…</p>
+<p><pre>Range(“M5”).Offset(fCount).Value = rs.address</pre><br>…返回位置…</p>
+<p><pre>Set rs = sc.FindNext(rs)<br>fCount = fCount + 1</pre><br>…继续遍历剩余字符串…</p>
+<p><pre class="">Loop While Not rs Is Nothing And rs.address&lt;&gt;address<br>End If</pre><br>…遍历所有字符串停止…</p>
+<p>提供源文件下载:<br><a href="https://www.lylares.cn/wp-content/uploads/2017/04/20170402004921930.rar" target="_blank" rel="external">https://www.lylares.cn/wp-content/uploads/2017/04/20170402004921930.rar</a><br>解压密码：gig365<br><span style="font-size: 10pt">说明：由于附件是启用了宏的工作簿，所以建议先打开Excel宏。</span></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Excel里需要用到查询时，一般想到的是Ctrl+F。但在实际使用中有诸多缺陷，比如当结果存在多情况时，通过这种方式并不能实现多结果的返回。于是我们想到了数组公式或者辅助列。这里用另外一种方式即VB代码实现，代码并不长，简洁易懂！文末提供源文件下载。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="excel" scheme="https://www.lylares.com/tags/excel/"/>
+    
+      <category term="vba" scheme="https://www.lylares.com/tags/vba/"/>
+    
+      <category term="模糊查询" scheme="https://www.lylares.com/tags/%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客建设</title>
+    <link href="https://www.lylares.com//myblog.html"/>
+    <id>https://www.lylares.com//myblog.html</id>
+    <published>2017-03-01T08:12:00.000Z</published>
+    <updated>2017-04-17T16:16:02.195Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一篇网站建设迭代日志，博主不定时更新网站建设中遇到的问题及解决办法，可能会对小白有用。<br><a id="more"></a><br><img src="https://www.lylares.cn/wp-content/uploads/2017/03/20170402123125448-300x164.png" alt="建站"></p>
+<p>这是一篇网站建设迭代日志，博主不定时更新网站建设中遇到的问题及解决办法，可能会对小白有用。</p>
+<p>3.2 第一篇文章，其实也没想好该写写啥，网站也还处于不稳定的状态，所以近期不会更新太多的东西。电信限制了80端口，好烦！只能租服务器了，备案流程也有点复杂啊，也没弄好…</p>
+<p>网站后台和数据库还没有搭建完成，目前更新内容非常麻烦，我想走完整个网站的上线流程一点会非常有趣，因为个人扮演了诸如：产品、开发、运营等角色…<br>完成了:首页-导航-关于 下面的内容，接下来会搭建网站的数据库以及后台管理系统。</p>
+<p>3.8之前版本都用的静态页面，维护起来十分不便。于是重新建了数据库，使用wordpress来重构了个人博客，感觉用这个比原来的静态页面难弄啊%&gt;_&lt;%…</p>
+<p>比如Smtp没办法弄成功，用户不能正常注册…</p>
+<p>3.13 目前已经能实现注册登录了，验证邮箱没有弄好，目前不支持邮件验证；留言模板也搞定，可以正常留言了。</p>
+<p>3.14 解决不能发邮件问题，解决用户注册 找回密码Bug，目前注册登录及找回密码功能一切正常。</p>
+<p>注册邮件bug:<br>修改wp-includes文件夹中的pluggable.php<br>解决方式：<br>找到根目录中wp-includes文件夹中的pluggable.php文件，然后打开，找到语句：<br>$message .= ‘&lt;’network_site_url(“wp-login.php?action=rp&amp;key=$key&amp;login=” . rawurlencode($user_login), ‘login’)”&gt;\r\n\” ;替换为：$message .= ‘&lt;’ . network_site_url(“wp-login.php?action=rp&amp;key=$key&amp;login=” . rawurlencode($user-&gt;user_login), ‘login’) . “\r\n\r\n”; 即可</p>
+<p>找回密码bug：<br>在根目录找到wp-config.php文件<br>$message .= ‘&lt;’ . network_site_url(“wp-login.php?action=rp&amp;key=$key&amp;login=” . rawurlencode($user_login), ‘login’) . “&gt;\r\n”;<br>修改为：<br>$message .= network_site_url(“wp-login.php?action=rp&amp;key=$key&amp;login=” . rawurlencode($user_login), ‘login’);</p>
+<p>3.15 全站pjax化，音乐可以后台不间断播放。</p>
+<p>3.17 部分模块功能尚不完善（留言板尚不能正常在pjax下使用），全站pjax暂时移除；暂时关闭新用户注册入口。</p>
+<p>3.21 修改wordpres wp-admin 目录下的file.php文件可以解决上传中文名后文件出错以及文件名重复覆盖的问题：查找Move the file to the uploads dir  大概在第372行，修改第一句为$new_file = $uploads[‘path’] . “/“.date(“YmdHis”).floor(microtime()*1000).”.”.$ext; 即可自动把文件名重命名日期时间格式。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一篇网站建设迭代日志，博主不定时更新网站建设中遇到的问题及解决办法，可能会对小白有用。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+    
+      <category term="网站建设" scheme="https://www.lylares.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+  </entry>
+  
+</feed>
