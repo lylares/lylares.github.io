@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lylares.me/about/index.html</loc>
+    
+    <lastmod>2017-05-01T04:31:41.001Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lylares.me/css.html</loc>
     
     <lastmod>2017-04-20T05:35:45.949Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://www.lylares.me/purity-css.html</loc>
     
     <lastmod>2017-04-20T04:25:11.165Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lylares.me/about/index.html</loc>
-    
-    <lastmod>2017-04-20T02:59:54.668Z</lastmod>
     
   </url>
   
