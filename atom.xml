@@ -4,9 +4,9 @@
   <subtitle>Enthusiastic about life, design and innovation.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.lylares.com/"/>
+  <link href="https://www.lylares.me/"/>
   <updated>2017-04-20T04:25:11.165Z</updated>
-  <id>https://www.lylares.com/</id>
+  <id>https://www.lylares.me/</id>
   
   <author>
     <name>lylares</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>精简美化CSS的JS源代码</title>
-    <link href="https://www.lylares.com//purity-css.html"/>
-    <id>https://www.lylares.com//purity-css.html</id>
+    <link href="https://www.lylares.me//purity-css.html"/>
+    <id>https://www.lylares.me//purity-css.html</id>
     <published>2017-04-20T03:23:22.000Z</published>
     <updated>2017-04-20T04:25:11.165Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="CSS" scheme="https://www.lylares.com/tags/CSS/"/>
+      <category term="CSS" scheme="https://www.lylares.me/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>Hexo托管到github和coding</title>
-    <link href="https://www.lylares.com//4-17.html"/>
-    <id>https://www.lylares.com//4-17.html</id>
+    <link href="https://www.lylares.me//4-17.html"/>
+    <id>https://www.lylares.me//4-17.html</id>
     <published>2017-04-17T15:50:36.000Z</published>
     <updated>2017-04-20T02:43:45.577Z</updated>
     
@@ -57,17 +57,17 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="-hexo -github -coding" scheme="https://www.lylares.com/tags/hexo-github-coding/"/>
+      <category term="-hexo -github -coding" scheme="https://www.lylares.me/tags/hexo-github-coding/"/>
     
   </entry>
   
   <entry>
     <title>第一篇HEXO博客</title>
-    <link href="https://www.lylares.com//%E7%AC%AC%E4%B8%80%E7%AF%87HEXO%E5%8D%9A%E5%AE%A2.html"/>
-    <id>https://www.lylares.com//第一篇HEXO博客.html</id>
+    <link href="https://www.lylares.me//%E7%AC%AC%E4%B8%80%E7%AF%87HEXO%E5%8D%9A%E5%AE%A2.html"/>
+    <id>https://www.lylares.me//第一篇HEXO博客.html</id>
     <published>2017-04-15T15:14:55.683Z</published>
     <updated>2017-04-17T16:18:04.095Z</updated>
     
@@ -79,17 +79,17 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="-Hexo -Github" scheme="https://www.lylares.com/tags/Hexo-Github/"/>
+      <category term="-Hexo -Github" scheme="https://www.lylares.me/tags/Hexo-Github/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.lylares.com//hello-world.html"/>
-    <id>https://www.lylares.com//hello-world.html</id>
+    <link href="https://www.lylares.me//hello-world.html"/>
+    <id>https://www.lylares.me//hello-world.html</id>
     <published>2017-04-15T14:10:35.425Z</published>
     <updated>2017-04-16T09:14:47.315Z</updated>
     
@@ -114,8 +114,8 @@
   
   <entry>
     <title>无名</title>
-    <link href="https://www.lylares.com//something.html"/>
-    <id>https://www.lylares.com//something.html</id>
+    <link href="https://www.lylares.me//something.html"/>
+    <id>https://www.lylares.me//something.html</id>
     <published>2017-04-10T13:46:37.000Z</published>
     <updated>2017-04-19T07:32:13.101Z</updated>
     
@@ -135,17 +135,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://www.lylares.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://www.lylares.me/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="无名" scheme="https://www.lylares.com/tags/%E6%97%A0%E5%90%8D/"/>
+      <category term="无名" scheme="https://www.lylares.me/tags/%E6%97%A0%E5%90%8D/"/>
     
   </entry>
   
   <entry>
     <title>Centos7安装wordpress全过程</title>
-    <link href="https://www.lylares.com//centos7-wordpress.html"/>
-    <id>https://www.lylares.com//centos7-wordpress.html</id>
+    <link href="https://www.lylares.me//centos7-wordpress.html"/>
+    <id>https://www.lylares.me//centos7-wordpress.html</id>
     <published>2017-04-09T06:47:33.000Z</published>
     <updated>2017-04-17T16:15:32.802Z</updated>
     
@@ -190,23 +190,23 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="CentOS7" scheme="https://www.lylares.com/tags/CentOS7/"/>
+      <category term="CentOS7" scheme="https://www.lylares.me/tags/CentOS7/"/>
     
-      <category term="Linux" scheme="https://www.lylares.com/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.lylares.me/tags/Linux/"/>
     
-      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+      <category term="wordpress" scheme="https://www.lylares.me/tags/wordpress/"/>
     
-      <category term="阿里云" scheme="https://www.lylares.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+      <category term="阿里云" scheme="https://www.lylares.me/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>这些年收藏的音乐</title>
-    <link href="https://www.lylares.com//music.html"/>
-    <id>https://www.lylares.com//music.html</id>
+    <link href="https://www.lylares.me//music.html"/>
+    <id>https://www.lylares.me//music.html</id>
     <published>2017-04-06T16:00:06.000Z</published>
     <updated>2017-04-17T16:15:53.828Z</updated>
     
@@ -222,19 +222,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="songtaste" scheme="https://www.lylares.com/tags/songtaste/"/>
+      <category term="songtaste" scheme="https://www.lylares.me/tags/songtaste/"/>
     
-      <category term="音乐" scheme="https://www.lylares.com/tags/%E9%9F%B3%E4%B9%90/"/>
+      <category term="音乐" scheme="https://www.lylares.me/tags/%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
   <entry>
     <title>那些实用的工具网站</title>
-    <link href="https://www.lylares.com//tools.html"/>
-    <id>https://www.lylares.com//tools.html</id>
+    <link href="https://www.lylares.me//tools.html"/>
+    <id>https://www.lylares.me//tools.html</id>
     <published>2017-04-05T14:24:37.000Z</published>
     <updated>2017-04-17T16:16:34.527Z</updated>
     
@@ -267,19 +267,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="工具" scheme="https://www.lylares.com/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://www.lylares.me/tags/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="网站" scheme="https://www.lylares.com/tags/%E7%BD%91%E7%AB%99/"/>
+      <category term="网站" scheme="https://www.lylares.me/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
   <entry>
     <title>医疗信息类移动端原型</title>
-    <link href="https://www.lylares.com//medical-product.html"/>
-    <id>https://www.lylares.com//medical-product.html</id>
+    <link href="https://www.lylares.me//medical-product.html"/>
+    <id>https://www.lylares.me//medical-product.html</id>
     <published>2017-04-02T14:20:50.000Z</published>
     <updated>2017-04-17T16:15:45.612Z</updated>
     
@@ -298,19 +298,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="axure" scheme="https://www.lylares.com/tags/axure/"/>
+      <category term="axure" scheme="https://www.lylares.me/tags/axure/"/>
     
-      <category term="医疗" scheme="https://www.lylares.com/tags/%E5%8C%BB%E7%96%97/"/>
+      <category term="医疗" scheme="https://www.lylares.me/tags/%E5%8C%BB%E7%96%97/"/>
     
   </entry>
   
   <entry>
     <title>WordPress内容指定用户可见</title>
-    <link href="https://www.lylares.com//wordpress.html"/>
-    <id>https://www.lylares.com//wordpress.html</id>
+    <link href="https://www.lylares.me//wordpress.html"/>
+    <id>https://www.lylares.me//wordpress.html</id>
     <published>2017-03-31T11:53:15.000Z</published>
     <updated>2017-04-17T16:17:02.492Z</updated>
     
@@ -396,19 +396,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+      <category term="wordpress" scheme="https://www.lylares.me/tags/wordpress/"/>
     
-      <category term="评论可见" scheme="https://www.lylares.com/tags/%E8%AF%84%E8%AE%BA%E5%8F%AF%E8%A7%81/"/>
+      <category term="评论可见" scheme="https://www.lylares.me/tags/%E8%AF%84%E8%AE%BA%E5%8F%AF%E8%A7%81/"/>
     
   </entry>
   
   <entry>
     <title>Axure进度条原型（最新版）</title>
-    <link href="https://www.lylares.com//axure-model.html"/>
-    <id>https://www.lylares.com//axure-model.html</id>
+    <link href="https://www.lylares.me//axure-model.html"/>
+    <id>https://www.lylares.me//axure-model.html</id>
     <published>2017-03-30T02:59:06.000Z</published>
     <updated>2017-04-17T16:14:51.282Z</updated>
     
@@ -424,19 +424,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="axure" scheme="https://www.lylares.com/tags/axure/"/>
+      <category term="axure" scheme="https://www.lylares.me/tags/axure/"/>
     
-      <category term="进度条" scheme="https://www.lylares.com/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/"/>
+      <category term="进度条" scheme="https://www.lylares.me/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/"/>
     
   </entry>
   
   <entry>
     <title>神探狄仁杰第四部-情花案</title>
-    <link href="https://www.lylares.com//video.html"/>
-    <id>https://www.lylares.com//video.html</id>
+    <link href="https://www.lylares.me//video.html"/>
+    <id>https://www.lylares.me//video.html</id>
     <published>2017-03-29T05:36:06.000Z</published>
     <updated>2017-04-17T16:16:52.570Z</updated>
     
@@ -450,17 +450,17 @@
     
     </summary>
     
-      <category term="随记" scheme="https://www.lylares.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="https://www.lylares.me/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="电视剧" scheme="https://www.lylares.com/tags/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
+      <category term="电视剧" scheme="https://www.lylares.me/tags/%E7%94%B5%E8%A7%86%E5%89%A7/"/>
     
   </entry>
   
   <entry>
     <title>WP不能正常发邮件解决方案</title>
-    <link href="https://www.lylares.com//wordpress-smtp.html"/>
-    <id>https://www.lylares.com//wordpress-smtp.html</id>
+    <link href="https://www.lylares.me//wordpress-smtp.html"/>
+    <id>https://www.lylares.me//wordpress-smtp.html</id>
     <published>2017-03-24T06:53:09.000Z</published>
     <updated>2017-04-17T16:17:16.539Z</updated>
     
@@ -473,21 +473,21 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+      <category term="wordpress" scheme="https://www.lylares.me/tags/wordpress/"/>
     
-      <category term="mail函数" scheme="https://www.lylares.com/tags/mail%E5%87%BD%E6%95%B0/"/>
+      <category term="mail函数" scheme="https://www.lylares.me/tags/mail%E5%87%BD%E6%95%B0/"/>
     
-      <category term="smtp" scheme="https://www.lylares.com/tags/smtp/"/>
+      <category term="smtp" scheme="https://www.lylares.me/tags/smtp/"/>
     
   </entry>
   
   <entry>
     <title>网站被百度K掉了</title>
-    <link href="https://www.lylares.com//baidu.html"/>
-    <id>https://www.lylares.com//baidu.html</id>
+    <link href="https://www.lylares.me//baidu.html"/>
+    <id>https://www.lylares.me//baidu.html</id>
     <published>2017-03-23T01:31:43.000Z</published>
     <updated>2017-04-17T16:15:24.046Z</updated>
     
@@ -499,19 +499,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="https" scheme="https://www.lylares.com/tags/https/"/>
+      <category term="https" scheme="https://www.lylares.me/tags/https/"/>
     
-      <category term="ssl" scheme="https://www.lylares.com/tags/ssl/"/>
+      <category term="ssl" scheme="https://www.lylares.me/tags/ssl/"/>
     
   </entry>
   
   <entry>
     <title>个人电子书收藏</title>
-    <link href="https://www.lylares.com//my-ebook.html"/>
-    <id>https://www.lylares.com//my-ebook.html</id>
+    <link href="https://www.lylares.me//my-ebook.html"/>
+    <id>https://www.lylares.me//my-ebook.html</id>
     <published>2017-03-21T14:20:09.000Z</published>
     <updated>2017-04-17T16:16:10.531Z</updated>
     
@@ -523,19 +523,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="ebook" scheme="https://www.lylares.com/tags/ebook/"/>
+      <category term="ebook" scheme="https://www.lylares.me/tags/ebook/"/>
     
-      <category term="电子书" scheme="https://www.lylares.com/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+      <category term="电子书" scheme="https://www.lylares.me/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
     
   </entry>
   
   <entry>
     <title>那些有意思的网站</title>
-    <link href="https://www.lylares.com//something-interesting.html"/>
-    <id>https://www.lylares.com//something-interesting.html</id>
+    <link href="https://www.lylares.me//something-interesting.html"/>
+    <id>https://www.lylares.me//something-interesting.html</id>
     <published>2017-03-19T02:00:25.000Z</published>
     <updated>2017-04-17T16:16:27.855Z</updated>
     
@@ -567,17 +567,17 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="设计" scheme="https://www.lylares.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+      <category term="设计" scheme="https://www.lylares.me/tags/%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>Axure实现音乐播放效果</title>
-    <link href="https://www.lylares.com//axure-music.html"/>
-    <id>https://www.lylares.com//axure-music.html</id>
+    <link href="https://www.lylares.me//axure-music.html"/>
+    <id>https://www.lylares.me//axure-music.html</id>
     <published>2017-03-13T10:13:47.000Z</published>
     <updated>2017-04-19T08:07:12.878Z</updated>
     
@@ -612,19 +612,19 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="axure" scheme="https://www.lylares.com/tags/axure/"/>
+      <category term="axure" scheme="https://www.lylares.me/tags/axure/"/>
     
-      <category term="网易云音乐" scheme="https://www.lylares.com/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+      <category term="网易云音乐" scheme="https://www.lylares.me/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
   <entry>
     <title>VBA实现模糊查询</title>
-    <link href="https://www.lylares.com//vba.html"/>
-    <id>https://www.lylares.com//vba.html</id>
+    <link href="https://www.lylares.me//vba.html"/>
+    <id>https://www.lylares.me//vba.html</id>
     <published>2017-03-05T08:13:54.000Z</published>
     <updated>2017-04-17T16:16:41.637Z</updated>
     
@@ -668,21 +668,21 @@ End Sub</pre>
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="excel" scheme="https://www.lylares.com/tags/excel/"/>
+      <category term="excel" scheme="https://www.lylares.me/tags/excel/"/>
     
-      <category term="vba" scheme="https://www.lylares.com/tags/vba/"/>
+      <category term="vba" scheme="https://www.lylares.me/tags/vba/"/>
     
-      <category term="模糊查询" scheme="https://www.lylares.com/tags/%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/"/>
+      <category term="模糊查询" scheme="https://www.lylares.me/tags/%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/"/>
     
   </entry>
   
   <entry>
     <title>博客建设</title>
-    <link href="https://www.lylares.com//myblog.html"/>
-    <id>https://www.lylares.com//myblog.html</id>
+    <link href="https://www.lylares.me//myblog.html"/>
+    <id>https://www.lylares.me//myblog.html</id>
     <published>2017-03-01T08:12:00.000Z</published>
     <updated>2017-04-17T16:16:02.195Z</updated>
     
@@ -708,12 +708,12 @@ End Sub</pre>
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.com/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="wordpress" scheme="https://www.lylares.com/tags/wordpress/"/>
+      <category term="wordpress" scheme="https://www.lylares.me/tags/wordpress/"/>
     
-      <category term="网站建设" scheme="https://www.lylares.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+      <category term="网站建设" scheme="https://www.lylares.me/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
     
   </entry>
   
