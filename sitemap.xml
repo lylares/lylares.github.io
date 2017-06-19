@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lylares.me/%E7%AC%AC%E4%B8%80%E7%AF%87HEXO%E5%8D%9A%E5%AE%A2.html</loc>
+    
+    <lastmod>2017-06-19T11:37:28.272Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lylares.me/about/index.html</loc>
+    
+    <lastmod>2017-06-19T11:36:46.529Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lylares.me/404.html</loc>
     
     <lastmod>2017-05-01T07:23:36.555Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://www.lylares.me/about/index.html</loc>
-    
-    <lastmod>2017-05-01T04:31:41.001Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.lylares.me/css.html</loc>
     
     <lastmod>2017-04-20T05:35:45.949Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lylares.me/purity-css.html</loc>
-    
-    <lastmod>2017-04-20T04:25:11.165Z</lastmod>
     
   </url>
   
@@ -54,13 +54,6 @@
     <loc>https://www.lylares.me/music/index.html</loc>
     
     <lastmod>2017-04-19T19:54:38.465Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lylares.me/%E7%AC%AC%E4%B8%80%E7%AF%87HEXO%E5%8D%9A%E5%AE%A2.html</loc>
-    
-    <lastmod>2017-04-17T16:18:04.095Z</lastmod>
     
   </url>
   

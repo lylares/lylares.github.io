@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lylares.me/"/>
-  <updated>2017-04-20T04:25:11.165Z</updated>
+  <updated>2017-06-19T11:37:28.272Z</updated>
   <id>https://www.lylares.me/</id>
   
   <author>
@@ -16,37 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>精简美化CSS的JS源代码</title>
-    <link href="https://www.lylares.me//purity-css.html"/>
-    <id>https://www.lylares.me//purity-css.html</id>
-    <published>2017-04-20T03:23:22.000Z</published>
-    <updated>2017-04-20T04:25:11.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>在优化网站的时候对小白来说就是能找到各种现成的工具。就像使用软件一样，多数人都乐意于一直点”next”甚至是直接点开就可以开始体验到软件的功能。傻瓜式的操作，比较低的学习成本的确是软件开发者要考虑的问题，毕竟工具是服务于人的嘛。这是一段优化CSS代码的Js源代码，希望有点用。<br><a id="more"></a><br>这里只提供关键的几项，’encode’’decode’’purify’’code’’empty’ 这几个是事件ID，代表代码压缩、净化、格式化等操作。当然用的时候是要放在<script> </script>中间了。至于怎么用，你大可发挥无穷的想象力做出一个比较好的优化工具。<br><blockquote><p>var oEncodeBtn = document.getElementById(‘encode’);   // 压缩<br>var oDecodeBtn = document.getElementById(‘decode’);  // 美化<br>var oPurify = document.getElementById(‘purify’);    // 净化<br>var oCode = document.getElementById(‘code’);       // 源代码<br>var oEmpty = document.getElementById(‘empty’);    // 清空</p>
-<p>oEmpty.onclick = function() {  //执行清空<br>    oCode.value = ‘’<br>};</p>
-<p>oEncodeBtn.onclick = function() {//执行压缩<br>    var val = oCode.value;<br>    val = val.replace(/\/*(.|\n)<em>?\</em>\//g,’’); //去除注释<br>    val = val.replace(/^\s+|\s+$/g,’’); //清除首尾空格<br>    val = val.replace(/(:)\s+/g,’$1’); //去除冒号后多个空格<br>    val = val.replace(/\s{2,}/g,’ ‘); //去除多余空格2个以上<br>    val = val.replace(/,\s+|\s+,/g,’,’); //去除多个样式共享时的多余空格<br>    val = val.replace(/;{2,}|;\s+/g,’;’); //去除多个分号或分号后面多余空格<br>    val = val.replace(/\s<em>{\s</em>/g,’{‘); //去除选择符后面多余空格<br>    val = val.replace(/\s<em>}\s</em>/g,’}’); //去除选择器前面多余空格<br>    val = val.replace(/[\n\t\f\r]/g,’’); //去除换行,制表符,分页符,回车<br>    val = val.replace(/;}/g,’}’); //去除元素样式的最后分号<br>    oCode.value = val;<br>};</p>
-<p>oPurify.onclick = function() { //执行净化;<br>    oEncodeBtn.click();<br>    var val = oCode.value;<br>    val = val.replace(/}/g,’}\n’);<br>    oCode.value = val;<br>};</p>
-<p>oDecodeBtn.onclick = function() { //执行格式化<br>    var val = oCode.value;<br>    val = val.replace(/(*\/)\s+(\w)/g,’$1\n$2’); //格式化注释后的多余空格<br>    val = val.replace(/(:)\s+/g,’$1’); //格式化冒号间多余空格<br>    val = val.replace(/,\s+|\s+,/g,’,’); //格式化逗号间多余空格<br>    val = val.replace(/;{2,}|;\s+/g,’;’); //格式化分号后多余字符<br>    val = val.replace(/;}/g,’}’); //去除最后一个分号<br>    val = val.replace(/\s<em>{\s</em>/g,’ {\n\t’); //格式化左{<br>    val = val.replace(/\s<em>}\s</em>/g,’\n}\n’); //格式化左}<br>    val = val.replace(/\s<em>;\s</em>/g, ‘;\n\t’); //格式化属性<br>    oCode.value = val;<br>};</p></blockquote><br>比如你可以这样用：<br><a href="https://www.lylares.com/css.html" target="_blank" rel="external">点击预览</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在优化网站的时候对小白来说就是能找到各种现成的工具。就像使用软件一样，多数人都乐意于一直点”next”甚至是直接点开就可以开始体验到软件的功能。傻瓜式的操作，比较低的学习成本的确是软件开发者要考虑的问题，毕竟工具是服务于人的嘛。这是一段优化CSS代码的Js源代码，希望有点用。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="https://www.lylares.me/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>第一篇HEXO博客</title>
     <link href="https://www.lylares.me//%E7%AC%AC%E4%B8%80%E7%AF%87HEXO%E5%8D%9A%E5%AE%A2.html"/>
     <id>https://www.lylares.me//第一篇HEXO博客.html</id>
     <published>2017-04-15T15:14:55.683Z</published>
-    <updated>2017-04-17T16:18:04.095Z</updated>
+    <updated>2017-06-19T11:37:28.272Z</updated>
     
-    <content type="html"><![CDATA[<p>lylares的第一篇基于Github+Hexo的文章！<br><a id="more"></a><br>2017/04/16 1:33使用Github+Hexo搭建博客成功，失败了好多次啊！</p>]]></content>
+    <content type="html"><![CDATA[<p>lylares的第一篇基于Github+Hexo的文章！<br><a id="more"></a><br>2017/04/16 1:33使用Github+Hexo搭建博客成功！</p>]]></content>
     
     <summary type="html">
     
