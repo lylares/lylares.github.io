@@ -4,9 +4,9 @@
   <subtitle>Enthusiastic about life, code and innovation.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.lylares.me/"/>
+  <link href="http://www.lylares.me/"/>
   <updated>2017-06-19T11:37:28.272Z</updated>
-  <id>https://www.lylares.me/</id>
+  <id>http://www.lylares.me/</id>
   
   <author>
     <name>lylares</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>第一篇HEXO博客</title>
-    <link href="https://www.lylares.me//first-blog-hexo.html"/>
-    <id>https://www.lylares.me//first-blog-hexo.html</id>
+    <link href="http://www.lylares.me//first-blog-hexo.html"/>
+    <id>http://www.lylares.me//first-blog-hexo.html</id>
     <published>2017-04-15T15:14:55.683Z</published>
     <updated>2017-06-19T11:37:28.272Z</updated>
     
@@ -30,10 +30,10 @@
     
     </summary>
     
-      <category term="日记" scheme="https://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
+      <category term="日记" scheme="http://www.lylares.me/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="-Hexo -Github" scheme="https://www.lylares.me/tags/Hexo-Github/"/>
+      <category term="-Hexo -Github" scheme="http://www.lylares.me/tags/Hexo-Github/"/>
     
   </entry>
   
